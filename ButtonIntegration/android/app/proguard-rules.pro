@@ -8,3 +8,10 @@
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
 # Add any project specific keep options here:
+
+    -keepattributes Exceptions,InnerClasses,EnclosingMethod
+    -keep class com.usebutton.** { *; }
+    -keepclassmembers class * implements android.os.Parcelable {
+        static ** CREATOR;
+    }
+    -keep class com.google.android.gms.ads.identifier.AdvertisingIdClient { public *; }

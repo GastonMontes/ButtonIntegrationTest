@@ -17,7 +17,7 @@ RCT_EXPORT_MODULE();
 RCT_EXPORT_METHOD(initializeButtonSDKWithAppID:(NSString *)appID) {
   [[Button debug] setLoggingEnabled:YES];
   
-  [[Button user] setIdentifier:@"UserIDPruebaIntegracion"];
+  [[Button user] setIdentifier:@"UserIDPruebaIntegracion-iOS"];
   
   [Button configureWithApplicationId:appID completion:^(NSError *error) {
     if (error != nil) {
@@ -29,10 +29,10 @@ RCT_EXPORT_METHOD(initializeButtonSDKWithAppID:(NSString *)appID) {
 RCT_EXPORT_METHOD(reportDummyImpression) {
   dispatch_async(dispatch_get_main_queue(), ^{
      BTNImpressionView *impressionView = [[BTNImpressionView alloc] initWithCreativeType:BTNCreativeTypeHero];
-     [impressionView trackWithURL:@"www.urlDePrueba.com"
+     [impressionView trackWithURL:@"www.urlDePrueba-ios.com"
                   visibleRateType:BTNVisibleRateTypePercent
                       visibleRate:0.55
-                          offerId:@"IDInexistente"];
+                          offerId:@"OfferIDInexistente-iOS"];
   });
 }
 
