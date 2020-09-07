@@ -40,7 +40,7 @@ const App: () => React$Node = () => {
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
-            <Button onPress={() => { buttonIntegrator.reportDummyImpression() }} title="Reportar impresión" />
+            <Button onPress={() => { buttonIntegrator.addImpression('www.test-url.com', 'percent', 0.5, "Test-OfferId") }} title="Reportar impresión" />
         </ScrollView>
       </SafeAreaView>
     </>

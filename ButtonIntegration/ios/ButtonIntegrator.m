@@ -33,13 +33,13 @@ RCT_EXPORT_METHOD(clearAllData) {
   [Button clearAllData];
 }
 
-RCT_EXPORT_METHOD(reportDummyImpression) {
+RCT_EXPORT_METHOD(addImpression:(NSString *)url:(NSString *)visibleRateType:(double)visibleRate:(NSString *)offerId) {
   dispatch_async(dispatch_get_main_queue(), ^{
-     BTNImpressionView *impressionView = [[BTNImpressionView alloc] initWithCreativeType:BTNCreativeTypeHero];
-     [impressionView trackWithURL:@"www.urlDePrueba-ios.com"
-                  visibleRateType:BTNVisibleRateTypePercent
-                      visibleRate:0.55
-                          offerId:@"OfferIDInexistente-iOS"];
+    BTNImpressionView *impressionView = [[BTNImpressionView alloc] initWithCreativeType:BTNCreativeTypeHero];
+
+    BTNOfferDetails *details = [BTNOfferDetails detailsWithURL:url offerId:offerId visibleRate:visibleRate rateType:([visibleRateType isEqualToString:@"fixed"]) ? BTNVisibleRateTypeFixed : BTNVisibleRateTypePercent];
+
+    [impressionView configureWithDetails:details];
   });
 }
 

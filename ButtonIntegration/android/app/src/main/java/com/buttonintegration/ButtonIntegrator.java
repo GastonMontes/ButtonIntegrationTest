@@ -11,6 +11,7 @@ import com.usebutton.sdk.Button;
 import com.usebutton.sdk.impression.CreativeType;
 import com.usebutton.sdk.impression.ImpressionView;
 import com.usebutton.sdk.impression.VisibleRateType;
+import com.usebutton.sdk.impression.OfferDetails;
 
 public class ButtonIntegrator extends ReactContextBaseJavaModule {
     private static ReactApplicationContext reactContext;
@@ -46,9 +47,14 @@ public class ButtonIntegrator extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void reportDummyImpression() {
+    public void addImpression(String url, String visibleRateType, float visibleRate, String offerId) {
         ImpressionView impressionView = new ImpressionView(this.reactContext.getApplicationContext());
         impressionView.setCreativeType(CreativeType.HERO);
-        impressionView.track("www.urlDePrueba-android.com", VisibleRateType.PERCENT, 0.5f, "OfferIDInexistente-Android");
+
+        VisibleRateType getVisibleRateType = visibleRateType.equals("fixed") ? VisibleRateType.FIXED : VisibleRateType.PERCENT;
+
+        OfferDetails offerDetails = new OfferDetails.Builder(url, offerId, visibleRate, getVisibleRateType).build();
+
+        impressionView.configureWith(offerDetails);
     }
 }
