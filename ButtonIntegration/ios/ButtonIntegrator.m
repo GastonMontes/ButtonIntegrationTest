@@ -14,16 +14,23 @@
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(initializeButtonSDKWithAppID:(NSString *)appID) {
+RCT_EXPORT_METHOD(configureSDK:(NSString *)appId:(BOOL *)debug) {
   [[Button debug] setLoggingEnabled:YES];
-  
-  [[Button user] setIdentifier:@"UserIDPruebaIntegracion-iOS"];
-  
-  [Button configureWithApplicationId:appID completion:^(NSError *error) {
+  [[Button debug] setVisualDebuggingEnabled:debug];
+
+  [Button configureWithApplicationId:appId completion:^(NSError *error) {
     if (error != nil) {
       NSLog(@"Error al inicializar la SDK de Button.");
     }
   }];
+}
+
+RCT_EXPORT_METHOD(setIdentifier:(NSString *)userId) {
+  [[Button user] setIdentifier:userId];
+}
+
+RCT_EXPORT_METHOD(clearAllData) {
+  [Button clearAllData];
 }
 
 RCT_EXPORT_METHOD(reportDummyImpression) {

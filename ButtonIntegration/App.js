@@ -8,7 +8,7 @@
 
 import React from 'react';
 
-import { NativeModules, Button } from 'react-native';
+import { NativeModules, Platform, Button } from 'react-native';
 
 import {
   SafeAreaView,
@@ -28,6 +28,11 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 const App: () => React$Node = () => {
+  const appId = Platform.OS === 'ios' ? 'app-72cfec8514b9e0f9' : 'app-046f965b5b1f83a6';
+  const buttonIntegrator = NativeModules.ButtonIntegrator;
+  buttonIntegrator.configureSDK(appId, true);
+  buttonIntegrator.setIdentifier('65934f64-1a8f-443f-9985-f4d8d142f9db'); // hardcoded userId
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -35,16 +40,7 @@ const App: () => React$Node = () => {
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
-            <Button onPress={() => { 
-              var buttonIntegrator = NativeModules.ButtonIntegrator;
-              buttonIntegrator.initializeButtonSDKWithAppID('app-72cfec8514b9e0f9')
-              }
-            } title="Inicializar Button" />
-            <Button onPress={() => { 
-              var buttonIntegrator = NativeModules.ButtonIntegrator;
-              buttonIntegrator.reportDummyImpression()
-              }
-            } title="Reportar impresión" />
+            <Button onPress={() => { buttonIntegrator.reportDummyImpression() }} title="Reportar impresión" />
         </ScrollView>
       </SafeAreaView>
     </>

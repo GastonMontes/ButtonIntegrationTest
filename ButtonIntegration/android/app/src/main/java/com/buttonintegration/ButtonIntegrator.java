@@ -26,15 +26,23 @@ public class ButtonIntegrator extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void initializeButtonSDKWithAppID(String appID) {
-        // Debugging enabled (do not include in production)
+    public void configureSDK(String appId, boolean debug) {
         if (BuildConfig.DEBUG) {
             Button.debug().setLoggingEnabled(true);
         }
+        Button.debug().setVisualDebuggingEnabled(debug);
 
-        Button.user().setIdentifier("UserIDPruebaIntegracion-Android");
+        Button.configure(this.reactContext.getApplicationContext(), appId);
+    }
 
-        Button.configure(this.reactContext.getApplicationContext(), appID);
+    @ReactMethod
+    public void setIdentifier(String userId) {
+        Button.user().setIdentifier(userId);
+    }
+
+    @ReactMethod
+    public void clearAllData() {
+        Button.clearAllData();
     }
 
     @ReactMethod
