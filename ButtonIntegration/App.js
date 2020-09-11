@@ -8,6 +8,8 @@
 
 import React from 'react';
 
+import ImpressionView from './ImpressionView'
+
 import { NativeModules, Platform, Button } from 'react-native';
 
 import {
@@ -37,10 +39,8 @@ const App: () => React$Node = () => {
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-            <Button onPress={() => { buttonIntegrator.addImpression('www.test-url.com', 'percent', 0.5, "Test-OfferId") }} title="Reportar impresión" />
+        <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
+          <ImpressionView style={{flex: 1, height: 50}} />
         </ScrollView>
       </SafeAreaView>
     </>
