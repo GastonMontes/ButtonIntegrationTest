@@ -19,6 +19,7 @@
 		38451AB124FC4D6F0052B800 /* ButtonIntegrator.m in Sources */ = {isa = PBXBuildFile; fileRef = 38451AB024FC4D6F0052B800 /* ButtonIntegrator.m */; };
 		38E4427E250C3867009E5C3D /* RNTImpressionViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E4427A250C3866009E5C3D /* RNTImpressionViewManager.m */; };
 		38E4427F250C3867009E5C3D /* RNTImpressionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E4427B250C3867009E5C3D /* RNTImpressionView.m */; };
+		38E44284250C50D9009E5C3D /* OfferDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E44283250C50D9009E5C3D /* OfferDetail.m */; };
 		3EDC9BB4C771D58B3122C6C4 /* libPods-ButtonIntegration-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3414EF5F626940855172459 /* libPods-ButtonIntegration-tvOSTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		AC796C422DA9F0228C58C871 /* libPods-ButtonIntegration-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D540CFC375006C604E4840 /* libPods-ButtonIntegration-tvOS.a */; };
@@ -61,6 +62,8 @@
 		38E4427B250C3867009E5C3D /* RNTImpressionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNTImpressionView.m; sourceTree = "<group>"; };
 		38E4427C250C3867009E5C3D /* RNTImpressionViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNTImpressionViewManager.h; sourceTree = "<group>"; };
 		38E4427D250C3867009E5C3D /* RNTImpressionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNTImpressionView.h; sourceTree = "<group>"; };
+		38E44282250C50D9009E5C3D /* OfferDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OfferDetail.h; sourceTree = "<group>"; };
+		38E44283250C50D9009E5C3D /* OfferDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OfferDetail.m; sourceTree = "<group>"; };
 		44103804E1C00EB2A312F5AE /* Pods-ButtonIntegration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ButtonIntegration.release.xcconfig"; path = "Target Support Files/Pods-ButtonIntegration/Pods-ButtonIntegration.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ButtonIntegration/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94D540CFC375006C604E4840 /* libPods-ButtonIntegration-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ButtonIntegration-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +137,7 @@
 		13B07FAE1A68108700A75B9A /* ButtonIntegration */ = {
 			isa = PBXGroup;
 			children = (
+				38E44280250C50BA009E5C3D /* Model */,
 				38E44279250C383E009E5C3D /* Expose */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -170,6 +174,23 @@
 				38E4427A250C3866009E5C3D /* RNTImpressionViewManager.m */,
 			);
 			name = Expose;
+			sourceTree = "<group>";
+		};
+		38E44280250C50BA009E5C3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				38E44281250C50C0009E5C3D /* Offer */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		38E44281250C50C0009E5C3D /* Offer */ = {
+			isa = PBXGroup;
+			children = (
+				38E44282250C50D9009E5C3D /* OfferDetail.h */,
+				38E44283250C50D9009E5C3D /* OfferDetail.m */,
+			);
+			name = Offer;
 			sourceTree = "<group>";
 		};
 		4138408A354F557737C98F27 /* Pods */ = {
@@ -595,6 +616,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38E4427F250C3867009E5C3D /* RNTImpressionView.m in Sources */,
+				38E44284250C50D9009E5C3D /* OfferDetail.m in Sources */,
 				38E4427E250C3867009E5C3D /* RNTImpressionViewManager.m in Sources */,
 				38451AB124FC4D6F0052B800 /* ButtonIntegrator.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,

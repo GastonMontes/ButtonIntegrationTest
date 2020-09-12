@@ -6,6 +6,7 @@
 //
 
 #import "RNTImpressionView.h"
+#import "OfferDetail.h"
 
 @import Button;
 
@@ -21,7 +22,11 @@
   self = [super init];
   
   if (self != nil) {
-    self.backgroundColor = UIColor.redColor;
+    // Add a random color to the background of the view.
+    CGFloat red = ( arc4random_uniform(256) / 255.0 );
+    CGFloat green = ( arc4random_uniform(256) / 255.0 );
+    CGFloat blue = ( arc4random_uniform(256) / 255.0 );
+    self.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
   }
   
   return self;
@@ -29,7 +34,8 @@
 
 #pragma mark - View life cycle.
 - (void)layoutSubviews {
-  self.impressionView = [[BTNImpressionView alloc] initWithCreativeType:BTNCreativeTypeHero];
+  self.impressionView = [[BTNImpressionView alloc] initWithFrame:self.bounds];
+  self.impressionView.creativeType = BTNCreativeTypeHero;
   self.impressionView.backgroundColor = UIColor.greenColor;
   [self addSubview:self.impressionView];
   
@@ -40,8 +46,15 @@
   [self.impressionView.leftAnchor constraintEqualToAnchor:self.leftAnchor constant:0].active = YES;
   [self.impressionView.topAnchor constraintEqualToAnchor:self.bottomAnchor constant:0].active = YES;
   [self.impressionView.rightAnchor constraintEqualToAnchor:self.rightAnchor constant:0].active = YES;
-  
-  self.impressionView.frame = self.frame;
+}
+
+#pragma mark - Configuaration functions.
+- (void)configureWith:(OfferDetail *)offerDetail {
+  BTNOfferDetails *details = [BTNOfferDetails detailsWithURL:offerDetail.offerDetailURL
+                                                     offerId:offerDetail.offerDetailID
+                                                 visibleRate:offerDetail.offerDetailRate
+                                                    rateType:offerDetail.offerDetailType];
+  [self.impressionView configureWithDetails:details];
 }
 
 @end

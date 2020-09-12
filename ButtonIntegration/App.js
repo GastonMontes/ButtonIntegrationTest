@@ -40,7 +40,20 @@ const App: () => React$Node = () => {
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
-          <ImpressionView style={{flex: 1, height: 50}} />
+          <ImpressionView ref={this.impressionView1} style={{flex: 1, height: 50}} />
+          <Button onPress={() => { this.impressionView1.configureWithDetails('url1', 'offerID1', 1.0, true) }} title="Configure ImpressionView 1" />
+
+          <ImpressionView ref={this.impressionView2} style={{flex: 1, height: 50}} />
+          <Button onPress={() => { this.impressionView2.configureWithDetails('url2', 'offerID2', 2.0, false) }} title="Configure ImpressionView 2" />
+          
+          <ImpressionView ref={this.impressionView3} style={{flex: 1, height: 50}} />
+          <Button onPress={() => { this.impressionView3.configureWithDetails('url3', 'offerID3', 3.0, true) }} title="Configure ImpressionView 3" />
+          
+          <ImpressionView ref={this.impressionView4} style={{flex: 1, height: 50}} />
+          <Button onPress={() => { this.impressionView4.configureWithDetails('url4', 'offerID4', 4.0, false) }} title="Configure ImpressionView 4" />
+          
+          <ImpressionView ref={this.impressionView5} style={{flex: 1, height: 50}} />
+          <Button onPress={() => { this.impressionView5.configureWithDetails('url5', 'offerID5', 5.0, true) }} title="Configure ImpressionView 5" />
         </ScrollView>
       </SafeAreaView>
     </>
