@@ -1,18 +1,19 @@
 import React from 'react';
-import { requireNativeComponent } from 'react-native';
+import {requireNativeComponent} from 'react-native';
 
-module.exports = requireNativeComponent('RNTImpressionView');
+const RNTImpressionView = requireNativeComponent('RNTImpressionView');
 
-class ImpressionView extends React.Component {
+export default class ImpressionView extends React.Component {
     configureWithDetails = (url, offerID, rate, rateFixed) => {
         UIManager.dispatchViewManagerCommand(
             ReactNative.findNodeHandle(this),
-            UIManager.getViewManagerConfig('RNTImpressionViewManager').Commands.configureWithDetails,
-            [ url, offerID, rate, rateFixed ]
-        );
-    };
+      UIManager.getViewManagerConfig('RNTImpressionViewManager').Commands
+        .configureWithDetails,
+      [url, offerID, rate, rateFixed],
+    );
+  };
 
-    render() {
-        return <RNTImpressionView />;
-    }
+  render() {
+    return <RNTImpressionView />;
+  }
 }

@@ -8,7 +8,7 @@
 
 import React from 'react';
 
-import ImpressionView from './ImpressionView'
+import ImpressionView from './ImpressionView';
 
 import { NativeModules, Platform, Button } from 'react-native';
 
@@ -35,25 +35,41 @@ const App: () => React$Node = () => {
   buttonIntegrator.configureSDK(appId, true);
   buttonIntegrator.setIdentifier('65934f64-1a8f-443f-9985-f4d8d142f9db'); // hardcoded userId
 
+  const impressionView1 = React.createRef();
+  const impressionView2 = React.createRef();
+  const impressionView3 = React.createRef();
+  const impressionView4 = React.createRef();
+  const impressionView5 = React.createRef();
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
-          <ImpressionView ref={this.impressionView1} style={{flex: 1, height: 50}} />
-          <Button onPress={() => { this.impressionView1.configureWithDetails('url1', 'offerID1', 1.0, true) }} title="Configure ImpressionView 1" />
+          <ImpressionView ref={impressionView1} style={{flex: 1, height: 50}}>
+            <Text style={{color: 'white', textAlign: 'center'}}>Impression View 1 Content</Text>
+          </ImpressionView>
+          <Button onPress={() => { impressionView1.current.configureWithDetails('url1', 'offerID1', 1.0, true) }} title="Configure ImpressionView 1" />
 
-          <ImpressionView ref={this.impressionView2} style={{flex: 1, height: 50}} />
-          <Button onPress={() => { this.impressionView2.configureWithDetails('url2', 'offerID2', 2.0, false) }} title="Configure ImpressionView 2" />
+          <ImpressionView ref={impressionView2} style={{flex: 1, height: 50}}>
+            <Text style={{color: 'white', textAlign: 'center'}}>Impression View 2 Content</Text>
+          </ImpressionView>
+          <Button onPress={() => { impressionView2.current.configureWithDetails('url2', 'offerID2', 2.0, false) }} title="Configure ImpressionView 2" />
           
-          <ImpressionView ref={this.impressionView3} style={{flex: 1, height: 50}} />
-          <Button onPress={() => { this.impressionView3.configureWithDetails('url3', 'offerID3', 3.0, true) }} title="Configure ImpressionView 3" />
+          <ImpressionView ref={impressionView3} style={{flex: 1, height: 50}}>
+            <Text style={{color: 'white', textAlign: 'center'}}>Impression View 3 Content</Text>
+          </ImpressionView>
+          <Button onPress={() => { impressionView3.current.configureWithDetails('url3', 'offerID3', 3.0, true) }} title="Configure ImpressionView 3" />
           
-          <ImpressionView ref={this.impressionView4} style={{flex: 1, height: 50}} />
-          <Button onPress={() => { this.impressionView4.configureWithDetails('url4', 'offerID4', 4.0, false) }} title="Configure ImpressionView 4" />
+          <ImpressionView ref={impressionView4} style={{flex: 1, height: 50}}>
+            <Text style={{color: 'white', textAlign: 'center'}}>Impression View 4 Content</Text>
+          </ImpressionView>
+          <Button onPress={() => { impressionView4.current.configureWithDetails('url4', 'offerID4', 4.0, false) }} title="Configure ImpressionView 4" />
           
-          <ImpressionView ref={this.impressionView5} style={{flex: 1, height: 50}} />
-          <Button onPress={() => { this.impressionView5.configureWithDetails('url5', 'offerID5', 5.0, true) }} title="Configure ImpressionView 5" />
+          <ImpressionView ref={impressionView5} style={{flex: 1, height: 50}}>
+            <Text style={{color: 'white', textAlign: 'center'}}>Impression View 5 Content</Text>
+          </ImpressionView>
+          <Button onPress={() => { impressionView5.current.configureWithDetails('url5', 'offerID5', 5.0, true) }} title="Configure ImpressionView 5" />
         </ScrollView>
       </SafeAreaView>
     </>
