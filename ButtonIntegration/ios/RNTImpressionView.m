@@ -32,8 +32,7 @@
   return self;
 }
 
-#pragma mark - ImpressionView functions.
-- (void)createImpressionView {
+- (void)layoutSubviews {
   self.impressionView = [[BTNImpressionView alloc] initWithFrame:self.bounds];
   [self addSubview:self.impressionView];
   
@@ -47,11 +46,7 @@
 }
 
 #pragma mark - Configuaration functions.
-- (void)configureWith:(OfferDetail *)offerDetail {
-  if (self.impressionView == nil) {
-    [self createImpressionView];
-  }
-  
+- (void)configureWith:(OfferDetail *)offerDetail {  
   BTNOfferDetails *details = [BTNOfferDetails detailsWithURL:offerDetail.offerDetailURL
                                                      offerId:offerDetail.offerDetailID
                                                  visibleRate:offerDetail.offerDetailRate
