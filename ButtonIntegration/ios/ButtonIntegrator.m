@@ -14,7 +14,7 @@
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(configureSDK:(NSString *)appId:(BOOL *)debug) {
+RCT_EXPORT_METHOD(configureSDK:(NSString *) appId:(BOOL *)debug) {
   [[Button debug] setLoggingEnabled:YES];
   [[Button debug] setVisualDebuggingEnabled:debug];
 

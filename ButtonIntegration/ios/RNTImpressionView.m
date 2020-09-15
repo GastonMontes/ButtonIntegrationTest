@@ -32,11 +32,9 @@
   return self;
 }
 
-#pragma mark - View life cycle.
-- (void)layoutSubviews {
+#pragma mark - ImpressionView functions.
+- (void)createImpressionView {
   self.impressionView = [[BTNImpressionView alloc] initWithFrame:self.bounds];
-  self.impressionView.creativeType = BTNCreativeTypeHero;
-  self.impressionView.backgroundColor = UIColor.greenColor;
   [self addSubview:self.impressionView];
   
   // Add constraints.
@@ -50,10 +48,15 @@
 
 #pragma mark - Configuaration functions.
 - (void)configureWith:(OfferDetail *)offerDetail {
+  if (self.impressionView == nil) {
+    [self createImpressionView];
+  }
+  
   BTNOfferDetails *details = [BTNOfferDetails detailsWithURL:offerDetail.offerDetailURL
                                                      offerId:offerDetail.offerDetailID
                                                  visibleRate:offerDetail.offerDetailRate
                                                     rateType:offerDetail.offerDetailType];
+  self.impressionView.creativeType = offerDetail.offerCreativeType;
   [self.impressionView configureWithDetails:details];
 }
 

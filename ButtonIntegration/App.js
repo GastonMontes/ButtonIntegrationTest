@@ -40,6 +40,7 @@ const App: () => React$Node = () => {
   const impressionView3 = React.createRef();
   const impressionView4 = React.createRef();
   const impressionView5 = React.createRef();
+  const impressionView6 = React.createRef();
 
   return (
     <>
@@ -49,27 +50,32 @@ const App: () => React$Node = () => {
           <ImpressionView ref={impressionView1} style={{flex: 1, height: 50}}>
             <Text style={{color: 'white', textAlign: 'center'}}>Impression View 1 Content</Text>
           </ImpressionView>
-          <Button onPress={() => { impressionView1.current.configureWithDetails('url1', 'offerID1', 1.0, true) }} title="Configure ImpressionView 1" />
+          <Button onPress={() => { impressionView1.current.configureWithDetails('url1', 'offerID1', 1.0, true, 'hero') }} title="Configure ImpressionView 1" />
 
           <ImpressionView ref={impressionView2} style={{flex: 1, height: 50}}>
             <Text style={{color: 'white', textAlign: 'center'}}>Impression View 2 Content</Text>
           </ImpressionView>
-          <Button onPress={() => { impressionView2.current.configureWithDetails('url2', 'offerID2', 2.0, false) }} title="Configure ImpressionView 2" />
+          <Button onPress={() => { impressionView2.current.configureWithDetails('url2', 'offerID2', 2.0, false, 'carousel') }} title="Configure ImpressionView 2" />
           
           <ImpressionView ref={impressionView3} style={{flex: 1, height: 50}}>
             <Text style={{color: 'white', textAlign: 'center'}}>Impression View 3 Content</Text>
           </ImpressionView>
-          <Button onPress={() => { impressionView3.current.configureWithDetails('url3', 'offerID3', 3.0, true) }} title="Configure ImpressionView 3" />
+          <Button onPress={() => { impressionView3.current.configureWithDetails('url3', 'offerID3', 3.0, true, 'list') }} title="Configure ImpressionView 3" />
           
           <ImpressionView ref={impressionView4} style={{flex: 1, height: 50}}>
             <Text style={{color: 'white', textAlign: 'center'}}>Impression View 4 Content</Text>
           </ImpressionView>
-          <Button onPress={() => { impressionView4.current.configureWithDetails('url4', 'offerID4', 4.0, false) }} title="Configure ImpressionView 4" />
+          <Button onPress={() => { impressionView4.current.configureWithDetails('url4', 'offerID4', 4.0, false, 'grid') }} title="Configure ImpressionView 4" />
           
           <ImpressionView ref={impressionView5} style={{flex: 1, height: 50}}>
             <Text style={{color: 'white', textAlign: 'center'}}>Impression View 5 Content</Text>
           </ImpressionView>
-          <Button onPress={() => { impressionView5.current.configureWithDetails('url5', 'offerID5', 5.0, true) }} title="Configure ImpressionView 5" />
+          <Button onPress={() => { impressionView5.current.configureWithDetails('url5', 'offerID5', 5.0, true, 'detail') }} title="Configure ImpressionView 5" />
+
+          <ImpressionView ref={impressionView6} style={{flex: 1, height: 50}}>
+            <Text style={{color: 'white', textAlign: 'center'}}>Impression View 6 Content</Text>
+          </ImpressionView>
+          <Button onPress={() => { impressionView6.current.configureWithDetails('url6', 'offerID6', 6.0, true, 'other') }} title="Configure ImpressionView 6" />
         </ScrollView>
       </SafeAreaView>
     </>
