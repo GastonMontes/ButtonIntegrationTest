@@ -15,7 +15,7 @@
 
 @implementation RNTImpressionViewManager
 
-RCT_EXPORT_MODULE(RNTImpressionView)
+RCT_EXPORT_MODULE(RNTImpressionViewManager)
 
 - (UIView *)view {
   return [[RNTImpressionView alloc] init];
