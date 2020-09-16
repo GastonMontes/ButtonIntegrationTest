@@ -32,7 +32,7 @@ import {
 const App: () => React$Node = () => {
   const appId = Platform.OS === 'ios' ? 'app-72cfec8514b9e0f9' : 'app-046f965b5b1f83a6';
   const buttonIntegrator = NativeModules.ButtonIntegrator;
-  buttonIntegrator.configureSDK(appId, true);
+  buttonIntegrator.configureSDKWithAppID(appId, true);
   buttonIntegrator.setIdentifier('65934f64-1a8f-443f-9985-f4d8d142f9db'); // hardcoded userId
 
   const impressionView1 = React.createRef();
