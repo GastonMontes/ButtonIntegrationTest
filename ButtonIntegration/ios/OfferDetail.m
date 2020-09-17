@@ -39,7 +39,7 @@
 #pragma mark - Initialization.
 - (instancetype)initWithURL:(NSString *)url
                     offerID:(NSString *)offerID
-                       rate:(NSUInteger)rate
+                       rate:(double)rate
                 rateIsFixed:(BOOL)isFixed
           offerCreativeType:(NSString *)type {
   self = [super init];
