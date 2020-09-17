@@ -6,12 +6,12 @@ import com.usebutton.sdk.impression.CreativeType;
 public class OfferDetail {
     private String offerDetailURL;
     private String offerDetailID;
-    private double offerDetailRate;
+    private float offerDetailRate;
     private VisibleRateType offerDetailType;
     private CreativeType offerCreativeType;
 
     // Initialization.
-    public OfferDetail(String url, String offerID, double rate, boolean rateIsFixed, String creativeType) {
+    public OfferDetail(String url, String offerID, float rate, boolean rateIsFixed, String creativeType) {
         this.offerDetailURL = url;
         this.offerDetailID = offerID;
         this.offerDetailRate = rate;
@@ -46,7 +46,7 @@ public class OfferDetail {
         return this.offerDetailID;
     }
 
-    public double getOfferDetailRate() {
+    public float getOfferDetailRate() {
         return this.offerDetailRate;
     }
 
