@@ -1,5 +1,5 @@
 import React from 'react';
-import {requireNativeComponent, UIManager, findNodeHandle} from 'react-native';
+import { requireNativeComponent, UIManager, findNodeHandle } from 'react-native';
 
 const RNTImpressionView = requireNativeComponent('RNTImpressionView');
 
