@@ -36,4 +36,25 @@ public class OfferDetail {
 
         return CreativeType.OTHER;
     }
+
+    // Getters.
+    public String getOfferDetailURL() {
+        return this.offerDetailURL;
+    }
+
+    public String getOfferDetailID() {
+        return this.offerDetailID;
+    }
+
+    public double getOfferDetailRate() {
+        return this.offerDetailRate;
+    }
+
+    public VisibleRateType getOfferDetailType() {
+        return this.offerDetailType;
+    }
+
+    public CreativeType getOfferCreativeType() {
+        return this.offerCreativeType;
+    }
 }
