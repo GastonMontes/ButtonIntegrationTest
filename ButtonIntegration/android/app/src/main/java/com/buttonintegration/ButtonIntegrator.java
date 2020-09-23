@@ -14,12 +14,13 @@ public class ButtonIntegrator extends ReactContextBaseJavaModule {
 
     ButtonIntegrator(ReactApplicationContext context) {
         super(context);
-        reactContext = context;
+
+        this.reactContext = context;
     }
 
     @Override
     public String getName() {
-        return "ButtonIntegrationExample";
+        return "ButtonIntegrator";
     }
 
     @ReactMethod
@@ -27,8 +28,8 @@ public class ButtonIntegrator extends ReactContextBaseJavaModule {
         if (BuildConfig.DEBUG) {
             Button.debug().setLoggingEnabled(true);
         }
-        Button.debug().setVisualDebuggingEnabled(debug);
 
+        Button.debug().setVisualDebuggingEnabled(debug);
         Button.configure(this.reactContext.getApplicationContext(), appId);
     }
 

@@ -44,6 +44,6 @@ public class RNTImpressionViewManager extends SimpleViewManager<RNTImpressionVie
     // ImpressionView configuration
     @ReactMethod
     public void configureWithDetails(String appId, boolean debug) {
-        this.bridge
+
     }
 }
