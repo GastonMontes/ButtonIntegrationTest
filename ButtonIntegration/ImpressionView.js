@@ -7,7 +7,7 @@ export default class ImpressionView extends React.Component {
     configureWithDetails = (url, offerID, rate, rateFixed, creativeType) => {
         UIManager.dispatchViewManagerCommand(
           findNodeHandle(this), 
-          UIManager.getViewManagerConfig('RNTImpressionView').Commands.configureWithDetails,
+          UIManager.RNTImpressionView.Commands.configureWithDetails,
           [url, offerID, rate, rateFixed, creativeType],
     );
   };

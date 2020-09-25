@@ -4,7 +4,6 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 
-
 import com.usebutton.sdk.Button;
 
 public class ButtonIntegrator extends ReactContextBaseJavaModule {
