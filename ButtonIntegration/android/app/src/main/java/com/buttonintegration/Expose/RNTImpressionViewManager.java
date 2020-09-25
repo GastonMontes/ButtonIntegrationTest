@@ -1,13 +1,15 @@
 package com.buttonintegration.Expose;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.uimanager.SimpleViewManager;
+import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.uimanager.ThemedReactContext;
+import com.facebook.react.uimanager.ViewGroupManager;
 
-public class RNTImpressionViewManager extends SimpleViewManager<RNTImpressionView> {
+public class RNTImpressionViewManager extends ViewGroupManager<RNTImpressionView> {
     public static final String REACT_CLASS = "RNTImpressionView";
     ReactApplicationContext callerContext;
 
@@ -29,8 +31,17 @@ public class RNTImpressionViewManager extends SimpleViewManager<RNTImpressionVie
     }
 
     // ImpressionView configuration
-    @ReactMethod
     public void configureWithDetails(String url, String offerID, double rate, boolean isRateFixed, String creativeType) {
+    }
 
+    @Override
+    public void receiveCommand(RNTImpressionView view, String commandId, @Nullable ReadableArray args) {
+        super.receiveCommand(view, commandId, args);
+
+        switch (commandId) {
+            case "configureWithDetails":
+                view.configureWithDetails(null);
+                break;
+        }
     }
 }

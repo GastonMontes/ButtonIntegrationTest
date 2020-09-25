@@ -49,7 +49,6 @@ RCT_EXPORT_METHOD(configureWithDetails:(nonnull NSNumber *)reactTag
                                           offerCreativeType:creativeType];
     [impressionView configureWith:details];
   }];
-  
 }
 
 @end
