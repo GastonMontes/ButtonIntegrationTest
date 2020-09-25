@@ -17,11 +17,11 @@ import java.util.List;
 
 public class RNTImpressionViewManager extends SimpleViewManager<RNTImpressionView> {
     public static final String REACT_CLASS = "RNTImpressionView";
-    ReactApplicationContext mCallerContext;
+    ReactApplicationContext callerContext;
 
     // Initialization.
     public RNTImpressionViewManager(ReactApplicationContext reactContext) {
-        mCallerContext = reactContext;
+        callerContext = reactContext;
     }
 
     // SimpleViewManager reimplemented methods.
@@ -33,17 +33,12 @@ public class RNTImpressionViewManager extends SimpleViewManager<RNTImpressionVie
     @NonNull
     @Override
     protected RNTImpressionView createViewInstance(@NonNull ThemedReactContext reactContext) {
-        return new RNTImpressionView(mCallerContext, null);
-    }
-
-    public List<ViewManager> createViewManagers(
-            ReactApplicationContext reactContext) {
-        return Arrays.<ViewManager>asList(new RNTImpressionViewManager(reactContext));
+        return new RNTImpressionView(callerContext, null);
     }
 
     // ImpressionView configuration
     @ReactMethod
-    public void configureWithDetails(String appId, boolean debug) {
+    public void configureWithDetails(String url, String offerID, double rate, boolean isRateFixed, String creativeType) {
 
     }
 }

@@ -2,6 +2,8 @@ package com.buttonintegration;
 
 import android.app.Application;
 import android.content.Context;
+
+import com.buttonintegration.Expose.RNTImpressionViewPackage;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
@@ -24,6 +26,7 @@ public class MainApplication extends Application implements ReactApplication {
         protected List<ReactPackage> getPackages() {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           packages.add(new ButtonIntegratorPackage());
+          packages.add(new RNTImpressionViewPackage());
           return packages;
         }
 
