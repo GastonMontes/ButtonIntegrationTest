@@ -10,7 +10,7 @@ import React from 'react';
 
 import ImpressionView from './ImpressionView';
 
-import { NativeModules, Platform, Button } from 'react-native';
+import { NativeModules, Platform, Button, Alert } from 'react-native';
 
 import {
   SafeAreaView,
@@ -49,6 +49,7 @@ const App: () => React$Node = () => {
         <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
           <ImpressionView ref={impressionView1} style={{flex: 1, height: 50}}>
             <Text style={{color: 'white', textAlign: 'center'}}>Impression View 1 Content</Text>
+            <Button onPress={() => Alert.alert('Impression Pressed')} title='Inside Impression' />
           </ImpressionView>
           <Button onPress={() => { impressionView1.current.configureWithDetails('url1', 'offerID1', 1.0, true, 'hero') }} title="Configure ImpressionView 1" />
 
