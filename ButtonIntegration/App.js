@@ -35,6 +35,8 @@ const App: () => React$Node = () => {
   buttonIntegrator.configureSDKWithAppID(appId, true);
   buttonIntegrator.setIdentifier('65934f64-1a8f-443f-9985-f4d8d142f9db'); // hardcoded userId
 
+  buttonIntegrator.purchaseRequest("www.prueba.com", "offerIDPrueba", "");
+
   const impressionView1 = React.createRef();
   const impressionView2 = React.createRef();
   const impressionView3 = React.createRef();

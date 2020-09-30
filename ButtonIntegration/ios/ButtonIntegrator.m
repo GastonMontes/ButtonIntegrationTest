@@ -37,10 +37,10 @@ RCT_EXPORT_METHOD(clearAllData) {
 
 RCT_EXPORT_METHOD(purchaseRequest:(NSString *)url offerID:(NSString *)offerID publisherReference:(NSString *)pubRef) {
   // Step 1 - Create a Purchase Path request
-  NSURL *url = [NSURL URLWithString:url];
+  NSURL *purchaseUrl = [NSURL URLWithString:url];
   
-  if (url != nil) {
-    BTNPurchasePathRequest *request = [BTNPurchasePathRequest requestWithURL:url];
+  if (purchaseUrl != nil) {
+    BTNPurchasePathRequest *request = [BTNPurchasePathRequest requestWithURL:purchaseUrl];
     
     // Step 2 - Associate the offerId
     request.offerId = offerID;
@@ -52,7 +52,7 @@ RCT_EXPORT_METHOD(purchaseRequest:(NSString *)url offerID:(NSString *)offerID pu
     [Button.purchasePath fetchWithRequest:request purchasePathHandler:^(BTNPurchasePath *purchasePath, NSError *error) {
       // Step 4 - Start Purchase Path flow
       [purchasePath start];
-    }
+    }];
   }
 }
 

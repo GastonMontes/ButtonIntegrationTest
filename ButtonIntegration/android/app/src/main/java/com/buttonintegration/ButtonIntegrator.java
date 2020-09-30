@@ -1,5 +1,7 @@
 package com.buttonintegration;
 
+import android.content.Context;
+
 import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -58,12 +60,10 @@ public class ButtonIntegrator extends ReactContextBaseJavaModule {
         // Step 3 - Fetch a Purchase Path object
         Button.purchasePath().fetch(request, new PurchasePathListener() {
             @Override
-            public void onComplete(@Nullable PurchasePath purchasePath,
-                                   @Nullable Throwable throwable) {
-
+            public void onComplete(@Nullable PurchasePath purchasePath, @Nullable Throwable throwable) {
                 // Step 4 - Start Purchase Path flow
                 if (purchasePath != null) {
-                    purchasePath.start(context);
+                    purchasePath.start(reactContext);
                 }
             }
         });
