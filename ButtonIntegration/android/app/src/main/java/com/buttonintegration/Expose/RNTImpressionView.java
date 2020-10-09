@@ -2,13 +2,13 @@ package com.buttonintegration.Expose;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 
 import com.buttonintegration.Model.OfferDetail;
 import com.usebutton.sdk.impression.ImpressionView;
 import com.usebutton.sdk.impression.OfferDetails;
 
-public class RNTImpressionView extends RelativeLayout {
+public class RNTImpressionView extends LinearLayout {
     private ImpressionView impressionView;
 
     // Initialization.
@@ -22,10 +22,9 @@ public class RNTImpressionView extends RelativeLayout {
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
 
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-        layoutParams.addRule(RelativeLayout.ALIGN_PARENT_TOP);
-        layoutParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         this.impressionView.setLayoutParams(layoutParams);
+        this.setOrientation(VERTICAL);
         this.addView(this.impressionView, 0);
     }
 
